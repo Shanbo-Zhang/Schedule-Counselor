@@ -9,7 +9,7 @@
 
 class Date {
 public:
-    Date() : day_(0), month_(0), year_(0) {}
+    Date() : day_(-1), month_(-1), year_(-1) {}
 
     Date(const int &year, const int &month, const int &day)
             : year_(year), month_(month), day_(day) {

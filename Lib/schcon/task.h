@@ -78,7 +78,7 @@ public:
         assert(!name_.IsEmpty()); // make sure the name is not empty.
     }
 
-    virtual ~AbstractTask() noexcept {} // To ensure we cannot create it.
+    virtual ~AbstractTask() noexcept {}
 
     TaskType Type() const noexcept {
         return type_;
@@ -97,14 +97,15 @@ public:
     }
 
 protected:
-    TaskType type_;
+    const TaskType type_;
     unsigned short id_;
     String name_;
     String location_;
     // String location_;
 
+private:
     static unsigned short RandomID() noexcept {
-        ::srand(::time(nullptr));
+        ::srand(::time(nullptr) << 16);
         unsigned short value = (::rand() << 16) >> 16;
         while (g_TaskIDBitmap.HasMark(value)) {
             value = (::rand() << 16) >> 16;
@@ -162,34 +163,60 @@ public:
 
     ~DeadlineTask() noexcept override = default;
 
-    Date &ReleasedDate() noexcept {
+    /**
+     * @return true if the instance has a valid released date.
+     */
+    bool HasReleasedDate() const noexcept {
+        return flag_.HasFlag(DeadlineFlag::ReleasedDate);
+    }
+
+    /**
+     * @return the released date of the instance
+     * @warning The instance must have a released date at first.
+     */
+    Date &ReleasedDate() {
+        assert(HasReleasedDate());
         return released_date_;
     }
 
-    const Date &ConstReleasedDate() const noexcept {
+    /**
+     * @return the released date of the instance
+     * @warning The instance must have a released date at first.
+     */
+    const Date &ConstReleasedDate() const {
+        assert(HasReleasedDate());
         return released_date_;
     }
 
-    DeadlineTask &SetReleasedDate(const int &year, const int &month, const int &day) {
-
+    /**
+     * Allows the released date to be valid.
+     * @param year the year of the given date
+     * @param month the month of the given date
+     * @param day the day of the given date
+     * @warning The given date must be a valid date.
+     */
+    void AddReleasedDate(const int &year, const int &month, const int &day) {
+        assert(!HasReleasedDate());
+        released_date_.SetYear(year).SetMonth(month).SetDay(day);
+        flag_.AddFlag(DeadlineFlag::ReleasedDate);
     }
 
-    const Time &ReleasedTime() const noexcept {
-        return released_time_;
+    /**
+     * Allows the released date to be valid.
+     * @param date the given date structure
+     * @warning The given date must be a valid date.
+     */
+    void AddReleasedDate(const Date &date) {
+        assert(!HasReleasedDate());
+        new(&released_date_)Date(date);
+        flag_.AddFlag(DeadlineFlag::ReleasedDate);
     }
 
-    const Date &DeadlineDate() const noexcept {
-        return deadline_date_;
+    void RemoveReleasedDate() {
+        assert(HasReleasedDate());
+        new(&released_date_)Date();
+        flag_.RemoveFlag(DeadlineFlag::ReleasedDate);
     }
-
-    const Time &DeadlineTime() const noexcept {
-        return deadline_time_;
-    }
-
-    unsigned long Duration() const noexcept {
-        return duration_;
-    }
-
 
 protected:
     Flag<DeadlineFlag> flag_;
@@ -198,6 +225,26 @@ protected:
     Date deadline_date_;
     Time deadline_time_;
     unsigned long duration_;
+};
+
+class ScheduledTask : public AbstractTask {
+public:
+    enum class ScheduleFlag {
+        HasBeginDate = 0x0001,
+        HasBeginTime = 0x0002,
+        HasDuration = 0x0004
+    };
+
+    class Schedule {
+    private:
+        Flag<ScheduleFlag> flag_;
+        Date date_;
+        Time time_;
+        unsigned long duration_;
+    };
+
+protected:
+
 };
 
 #endif //SCLIB_TASK_H

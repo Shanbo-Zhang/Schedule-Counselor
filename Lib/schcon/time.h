@@ -10,7 +10,7 @@
 class Time {
 public:
 
-    Time() : second_(0), minute_(0), hour_(0) {}
+    Time() : second_(-1), minute_(-1), hour_(-1) {}
 
     Time(const int &hour, const int &minute, const int &second)
             : hour_(hour), minute_(minute), second_(second) {

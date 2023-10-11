@@ -32,28 +32,28 @@ public:
     Flag<Enum> &AddFlags(SizeType count, ...) noexcept {
         if (count > 0) {
             va_list argv;
-                    va_start(argv, count);
+            va_start(argv, count);
             for (; count; --count) {
-                value_ |= Int(va_arg(argv, Enum));
+                value_ |= static_cast<Int>(va_arg(argv, Enum));
             }
-                    va_end(argv);
+            va_end(argv);
         }
         return *this;
     }
 
     Flag<Enum> &RemoveFlag(const Enum &flag) noexcept {
-        value_ ^= flag;
+        value_ ^= static_cast<Int>(flag);
         return *this;
     }
 
     Flag<Enum> &RemoveFlags(SizeType count, ...) noexcept {
         if (count > 0) {
             va_list argv;
-                    va_start(argv, count);
+            va_start(argv, count);
             for (; count; --count) {
-                value_ ^= Int(va_arg(argv, Enum));
+                value_ ^= static_cast<Int>(va_arg(argv, Enum));
             }
-                    va_end(argv);
+            va_end(argv);
         }
         return *this;
     }
@@ -65,13 +65,13 @@ public:
     bool HasAnyFlags(SizeType count, ...) const noexcept {
         if (count > 0) {
             va_list argv;
-                    va_start(argv, count);
+            va_start(argv, count);
             for (; count; --count) {
-                if ((value_ | va_arg(argv, Enum)) == value_) {
+                if ((value_ | static_cast<Int>(va_arg(argv, Enum))) == value_) {
                     return true;
                 }
             }
-                    va_end(argv);
+            va_end(argv);
         }
         return false;
     }
@@ -87,13 +87,13 @@ public:
     bool HasAllFlags(SizeType count, ...) const noexcept {
         if (count > 0) {
             va_list argv;
-                    va_start(argv, count);
+            va_start(argv, count);
             for (; count; --count) {
-                if ((value_ | va_arg(argv, Enum)) != value_) {
+                if ((value_ | static_cast<Int>(va_arg(argv, Enum))) != value_) {
                     return false;
                 }
             }
-                    va_end(argv);
+            va_end(argv);
             return true;
         }
         return false;

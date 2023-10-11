@@ -8,87 +8,106 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug"/>
+				<Option working_dir="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lib">
-				<Option output="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Lib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug"/>
+				<Option output="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Lib.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-D_UNICODE"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lib"/>
-					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lib"/>
+					<CompileFile command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lib/fast">
-				<Option output="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Lib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug"/>
+				<Option output="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Lib.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/11"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
-					<Add directory="/usr/include/c++/11/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-D_UNICODE"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/shanboz2/AppData/Local/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lib/fast"/>
-					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lib/fast"/>
+					<CompileFile command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug"/>
+				<Option working_dir="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug"/>
+				<Option working_dir="C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j20 -f &quot;/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/shanboz2/AppData/Local/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/shanboz2/ScheduleCounselor/Lib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/back/base.h">
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/main.cpp">
 			<Option target="Lib"/>
 		</Unit>
-		<Unit filename="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/main.cpp">
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/base.h">
 			<Option target="Lib"/>
 		</Unit>
-		<Unit filename="/mnt/d/Undergraduate/Projects/ScheduleCounselor/Lib/CMakeLists.txt">
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/calendar.h">
+			<Option target="Lib"/>
+		</Unit>
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/date.h">
+			<Option target="Lib"/>
+		</Unit>
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/escapist/flag.h">
+			<Option target="Lib"/>
+		</Unit>
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/task.h">
+			<Option target="Lib"/>
+		</Unit>
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/schcon/time.h">
+			<Option target="Lib"/>
+		</Unit>
+		<Unit filename="C:/Users/shanboz2/ScheduleCounselor/Lib/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

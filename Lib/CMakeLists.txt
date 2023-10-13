@@ -14,4 +14,5 @@ add_executable(Lib main.cpp
         schcon/calendar.h
         schcon/task.h
         schcon/escapist/flag.h
+        schcon/avl_tree.h
 )

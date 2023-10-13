@@ -216,6 +216,90 @@ public:
         assert(HasReleasedDate());
         new(&released_date_)Date();
         flag_.RemoveFlag(DeadlineFlag::ReleasedDate);
+        if (flag_.HasFlag(DeadlineFlag::ReleasedTime)) {
+            new(&released_time_)Time();
+        }
+    }
+
+    // ***************************************************************************
+
+    bool HasReleasedTime() const noexcept {
+        return flag_.HasAllFlags(2, DeadlineFlag::ReleasedDate, DeadlineFlag::ReleasedTime);
+    }
+
+    Time &ReleasedTime() {
+        assert(HasReleasedTime());
+        return released_time_;
+    }
+
+    const Time &ConstReleasedTime() const {
+        assert(HasReleasedTime());
+        return released_time_;
+    }
+
+    void AddReleasedTime(const int &hour, const int &minute, const int &second) {
+        assert(HasReleasedDate() && !HasReleasedTime());
+        released_time_.SetHour(hour).SetMinute(minute).SetSecond(second);
+        flag_.AddFlag(DeadlineFlag::ReleasedTime);
+    }
+
+    void AddReleasedTime(const Time &time) {
+        assert(HasReleasedDate() && !HasReleasedTime());
+        new(&released_time_)Time(time);
+        flag_.AddFlag(DeadlineFlag::ReleasedTime);
+    }
+
+    void RemoveReleasedTime() {
+        assert(HasReleasedTime());
+        new(&released_time_)Time();
+        flag_.RemoveFlag(DeadlineFlag::ReleasedTime);
+    }
+
+    // ***************************************************************************
+
+//    bool HasDeadlineDate() const noexcept {
+//
+//    }
+
+    Date &DeadlineDate() noexcept {
+        return deadline_date_;
+    }
+
+    const Date &ConstDeadlineDate() const noexcept {
+        return deadline_date_;
+    }
+
+    Time &DeadlineTime() noexcept {
+        return deadline_time_;
+    }
+
+    const Time &ConstDeadlineTime() const noexcept {
+        return deadline_time_;
+    }
+
+    bool HasDuration() const noexcept {
+        return flag_.HasFlag(DeadlineFlag::Duration);
+    }
+
+    unsigned long Duration() const {
+        assert(HasDuration());
+    }
+
+    void AddDuration(const unsigned long &duration) {
+        assert(!HasDuration());
+        duration_ = duration;
+        flag_.AddFlag(DeadlineFlag::Duration);
+    }
+
+    void RemoveDuration() {
+        assert(HasDuration());
+        duration_ = 0;
+        flag_.RemoveFlag(DeadlineFlag::Duration);
+    }
+
+    void SetDuration(const unsigned long &duration) {
+        assert(HasDuration() && duration);
+        duration_ = duration;
     }
 
 protected:
@@ -236,6 +320,9 @@ public:
     };
 
     class Schedule {
+    public:
+        Schedule() = delete;
+
     private:
         Flag<ScheduleFlag> flag_;
         Date date_;

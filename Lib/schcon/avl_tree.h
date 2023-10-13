@@ -34,6 +34,12 @@ public:
     }
 
     AVLTree<K, V> &Insert(const K &key, const V &value) {
+        Insert(root_, key, value);
+        return *this;
+    }
+
+    const V &At(const K &key) {
+
     }
 
 private:
@@ -56,7 +62,7 @@ private:
     TreeNode *root_;
     SizeType count_;
 
-    int Height(const TreeNode *&node) noexcept {
+    int Height(const TreeNode *node) noexcept {
         return node ? node->height_ : -1;
     }
 
@@ -73,7 +79,7 @@ private:
         node = node->right_;
         temp->right_ = node->left_;
         node->left_ = temp;
-        temp->height_ = 1 + max(Height(temp->left_, temp->right_));
+        temp->height_ = 1 + max(Height(temp->left_), Height(temp->right_));
     }
 
     void RotateRight(TreeNode *&node) {
@@ -81,16 +87,28 @@ private:
         node = node->left_;
         temp->left_ = node->right_;
         node->right_ = temp;
-        temp->height_ = 1 + max(Height(temp->left_, Height(temp->right_)));
+        temp->height_ = 1 + max(Height(temp->left_), Height(temp->right_));
         node->height_ = 1 + max(Height(node->left_), Height(node->right_));
     }
 
     void Rebalance(TreeNode *&node) {
         int balance = Height(node->right_) - Height(node->left_);
-        if (balance > 1) {
-
-        } else if (balance < -1) {
-
+        if (balance == -2) {
+            int left_balance = Height(node->left_->right_) - Height(node->right_->left_);
+            if (left_balance == -1) {
+                RotateRight(node);
+            } else if (left_balance == 1) {
+                RotateLeft(node->left_);
+                RotateRight(node);
+            }
+        } else if (balance == 2) {
+            int right_balance = Height(node->right_->right_) - Height(node->right_->left_);
+            if (right_balance == 1) {
+                RotateLeft(node);
+            } else if (right_balance == -1) {
+                RotateRight(node->right_);
+                RotateLeft(node);
+            }
         }
     }
 
@@ -105,11 +123,15 @@ private:
 
     void Insert(TreeNode *&node, const K &key, const V &value) {
         if (node) {
-            if (key < node->key_) {
+            if (key == node->key_) {
+                node->value_ = value;
+                return;
+            } else if (key < node->key_) {
                 Insert(node->left_, key, value);
             } else {
                 Insert(node->right_, key, value);
             }
+            node->height_ = 1 + max(Height(node->left_), Height(node->right_));
         } else {
             node = new TreeNode(key, value);
         }

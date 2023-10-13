@@ -1,7 +1,11 @@
 #include <iostream>
 #include "schcon/task.h"
+#include "schcon/avl_tree.h"
 
 int main() {
-    DeadlineTask t(L"ECE 110: Lab #7 Report", nullptr, Date(), Time(), Date(2023, 10, 9), Time(13, 30, 0), 1800);
-
+    AVLTree<int, int> tr;
+    tr.Insert(4, 5);
+    tr.Insert(6, 7);
+    tr.Insert(8, 9);
+    std::cout << tr.Count();
 }

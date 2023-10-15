@@ -338,6 +338,38 @@ public:
 
         Schedule(const Schedule &other) = default;
 
+        bool HasBeginDate() const noexcept {
+            return flag_.HasFlag(ScheduleFlag::HasBeginDate);
+        }
+
+        Date &BeginDate() {
+            assert(HasBeginDate());
+            return date_;
+        }
+
+        const Date &ConstBeginDate() const {
+            assert(HasBeginDate());
+            return date_;
+        }
+
+        void AddBeginDate(const int &year, const int &month, const int &day) {
+            assert(!HasBeginDate());
+            new(&date_)Date(year, month, day);
+            flag_.AddFlag(ScheduleFlag::HasBeginDate);
+        }
+
+        void AddBeginDate(const Date &date) {
+            assert(!HasBeginDate());
+            new(&date_)Date(date);
+            flag_.AddFlag(ScheduleFlag::HasBeginDate);
+        }
+
+        void RemoveBeginDate() {
+            assert(HasBeginDate());
+            new(&date_)Date();
+            flag_.RemoveFlag(ScheduleFlag::HasBeginDate);
+        }
+
     private:
         Flag<ScheduleFlag> flag_;
         Date date_;

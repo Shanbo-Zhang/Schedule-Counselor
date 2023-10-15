@@ -1,3 +1,3 @@
-D:/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/CMakeFiles/Lib.dir
-D:/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Undergraduate/Projects/ScheduleCounselor/Lib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+U:/Schedule-Counselor/Lib/cmake-build-debug/CMakeFiles/Lib.dir
+U:/Schedule-Counselor/Lib/cmake-build-debug/CMakeFiles/edit_cache.dir
+U:/Schedule-Counselor/Lib/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -47,15 +47,15 @@ enum class TaskType : unsigned short {
 class {
 public:
     void Mark(unsigned short id) noexcept {
-        bitmap_[id >> 5] |= (0x1 << ((id << 27) >> 27));
+        bitmap_[id >> 5] |= (0x1 << (id & 0x001F));
     }
 
     void Unmark(unsigned short id) {
-        bitmap_[id >> 5] ^= (0x1 << ((id << 27) >> 27));
+        bitmap_[id >> 5] ^= (0x1 << (id & 0x001F));
     }
 
     bool HasMark(unsigned short id) const noexcept {
-        return bitmap_[id >> 5] & (0x1 << ((id << 27) >> 27));
+        return bitmap_[id >> 5] & (0x1 << (id & 0x001F));
     }
 
 private:
@@ -322,6 +322,21 @@ public:
     class Schedule {
     public:
         Schedule() = delete;
+
+        Schedule(const Date &date, const Time &time, unsigned long duration)
+                : flag_(), date_(date), time_(time), duration_(duration) {
+            if (date_.IsValid()) {
+                flag_.AddFlag(ScheduleFlag::HasBeginDate);
+            }
+            if (time_.IsValid()) {
+                flag_.AddFlag(ScheduleFlag::HasBeginTime);
+            }
+            if (duration_ > 0) {
+                flag_.AddFlag(ScheduleFlag::HasDuration);
+            }
+        }
+
+        Schedule(const Schedule &other) = default;
 
     private:
         Flag<ScheduleFlag> flag_;
